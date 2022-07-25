@@ -1,6 +1,3 @@
-extern crate katex;
-extern crate toml;
-
 use clap::{App, Arg, ArgMatches, SubCommand};
 use mdbook::book::Book;
 use mdbook::errors::Error;
@@ -9,7 +6,7 @@ use mdbook::renderer::{RenderContext, Renderer};
 use mdbook_katex::KatexProcessor;
 use std::io::{self, Read};
 
-pub fn make_app() -> App<'static, 'static> {
+pub fn make_app() -> App<'static> {
     App::new("mdbook-katex")
         .about("A preprocessor that renders KaTex equations to HTML.")
         .subcommand(
